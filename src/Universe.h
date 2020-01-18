@@ -36,7 +36,7 @@ public:
      */
     void render_self(
         djf_3d::Canvas& canvas,
-        djf_3d::Perspective& persp
+        const djf_3d::Perspective& persp
     ) const noexcept;
 
     long get_star_count(void) const noexcept;

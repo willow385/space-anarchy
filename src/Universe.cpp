@@ -48,8 +48,9 @@ Universe::~Universe(void) noexcept {}
 
 void Universe::render_self(
     djf_3d::Canvas& canvas,
-    djf_3d::Perspective& persp
+    const djf_3d::Perspective& persp
 ) const noexcept {
+    canvas.set_draw_color(star_color);
     for (auto& star: stars) {
         canvas.draw_point(
             *star,
