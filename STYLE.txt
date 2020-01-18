@@ -1,5 +1,7 @@
 Rules of programming style for space-anarchy:
 
+* Indent with spaces in multiples of four
+
 * Opening braces on the same line
 
 * Use exceptions very sparingly, i.e. only for truly
