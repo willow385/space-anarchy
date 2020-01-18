@@ -1,6 +1,7 @@
 #include <djf-3d-2/djf-3d.h>
 #include <vector>
 #include <memory>
+#include <string>
 
 #ifndef UNIVERSE_H
 #define UNIVERSE_H
@@ -14,16 +15,21 @@ class Universe {
 
 private:
     std::vector<std::unique_ptr<djf_3d::Vec3f>> stars;
+    std::vector<std::unique_ptr<djf_3d::Model3d>> asteroids;
     long universe_radius;
     djf_3d::Vec3f center;
     djf_3d::Color star_color;
+    djf_3d::Color asteroid_color;
 
 public:
     Universe(
         const djf_3d::Canvas& canvas,
         const long radius,
         const long number_of_stars,
-        const djf_3d::Color& init_star_color
+        const djf_3d::Color& init_star_color,
+        const std::string& asteroid_path,
+        const int number_of_asteroids,
+        const djf_3d::Color& init_asteroid_color
     );
 
     ~Universe(void) noexcept;
@@ -62,7 +68,8 @@ public:
 
     template <djf_3d::Axis axis>
     void rotate(
-        const float theta_degrees
+        const float theta_degrees,
+        const djf_3d::Canvas& canvas
     ) noexcept;
 };
 

@@ -1,5 +1,6 @@
 #include <djf-3d-2/djf-3d.h>
 #include <vector>
+#include <string>
 #include <memory>
 #include <random>
 #include "Universe.h"
@@ -7,10 +8,13 @@
 namespace anrchy {
 
 Universe::Universe(
-     const djf_3d::Canvas& canvas,
-     const long radius,
-     const long number_of_stars,
-     const djf_3d::Color& init_star_color
+    const djf_3d::Canvas& canvas,
+    const long radius,
+    const long number_of_stars,
+    const djf_3d::Color& init_star_color,
+    const std::string& asteroid_path,
+    const int number_of_asteroids,
+    const djf_3d::Color& init_asteroid_color
 ): center(
     canvas.get_width() / 2,
     canvas.get_height() / 2,
@@ -21,10 +25,18 @@ Universe::Universe(
     star_color.green = init_star_color.green;
     star_color.blue = init_star_color.blue;
     star_color.alpha = init_star_color.alpha;
+    asteroid_color.red = init_asteroid_color.red;
+    asteroid_color.green = init_asteroid_color.green;
+    asteroid_color.blue = init_asteroid_color.blue;
+    asteroid_color.alpha = init_asteroid_color.alpha;
 
     std::random_device rand_dev;
     std::mt19937 rand_gen(rand_dev());
     std::uniform_real_distribution<> rand_angle(0.0, 360.0);
+    std::uniform_real_distribution<> rand_asteroid_pos(
+        static_cast<float>(-1 * universe_radius) / 30,
+        static_cast<float>(universe_radius) / 30
+    );
     for (long i = 0; i < number_of_stars; i++) {
         std::unique_ptr<djf_3d::Vec3f> star(
             new djf_3d::Vec3f(
@@ -42,6 +54,19 @@ Universe::Universe(
         star->rotate_3d<djf_3d::Axis::Z>(center, z_angle);
         stars.push_back(std::move(star));
     }
+
+    for (int i = 0; i < number_of_asteroids; i++) {
+        std::unique_ptr<djf_3d::Model3d> asteroid(
+            new djf_3d::Model3d(asteroid_path)
+        );
+        djf_3d::Vec3f new_pos(
+            rand_asteroid_pos(rand_gen),
+            rand_asteroid_pos(rand_gen),
+            rand_asteroid_pos(rand_gen)
+        );
+        asteroid->set_position(new_pos);
+        asteroids.push_back(std::move(asteroid));
+    }
 }
 
 Universe::~Universe(void) noexcept {}
@@ -54,6 +79,13 @@ void Universe::render_self(
     for (auto& star: stars) {
         canvas.draw_point(
             *star,
+            persp
+        );
+    }
+    canvas.set_draw_color(asteroid_color);
+    for (auto& asteroid: asteroids) {
+        canvas.draw_model3d(
+            *asteroid,
             persp
         );
     }
@@ -96,9 +128,8 @@ void Universe::set_center(
 
 template <djf_3d::Axis axis>
 void Universe::translate(const float distance) noexcept {
-    center.translate<axis>(distance);
-    for (auto& star: stars) {
-        star->translate<axis>(distance);
+    for (auto& asteroid: asteroids) {
+        asteroid->translate<axis>(distance);
     }
 }
 
@@ -115,21 +146,37 @@ template void Universe::translate<djf_3d::Axis::Z>(
 
 template <djf_3d::Axis axis>
 void Universe::rotate(
-    const float theta_degrees
+    const float theta_degrees,
+    const djf_3d::Canvas& canvas
 ) noexcept {
     for (auto& star: stars) {
         star->rotate_3d<axis>(center, theta_degrees);
     }
+
+    djf_3d::Vec3f player_pos(
+        canvas.get_width() / 2,
+        canvas.get_viewer_y_pos() / 2,
+        canvas.get_height() / 2
+    );
+
+    for (auto& asteroid: asteroids) {
+        asteroid->rotate_around<axis>(
+            player_pos, theta_degrees
+        );
+    }
 }
 
 template void Universe::rotate<djf_3d::Axis::X>(
-    const float theta_degrees
+    const float theta_degrees,
+    const djf_3d::Canvas& canvas
 ) noexcept;
 template void Universe::rotate<djf_3d::Axis::Y>(
-    const float theta_degrees
+    const float theta_degrees,
+    const djf_3d::Canvas& canvas
 ) noexcept;
 template void Universe::rotate<djf_3d::Axis::Z>(
-    const float theta_degrees
+    const float theta_degrees,
+    const djf_3d::Canvas& canvas
 ) noexcept;
 
 } // end of namespace anrchy

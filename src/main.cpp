@@ -18,6 +18,7 @@
 #include <djf-3d-2/djf-3d.h>
 #include <string>
 #include "Universe.h"
+#include "Player.h"
 
 int main(void) {
     std::string title("Space Anarchy - by Dante Falzone");
@@ -27,22 +28,57 @@ int main(void) {
         600,
         -1100
     );
+
     djf_3d::Perspective persp(400, 300, 1200.0);
     djf_3d::Color star_color = {255, 255, 200, 0};
+    djf_3d::Color asteroid_color = {255, 50, 0, 0};
+    djf_3d::Color green = {0, 255, 50, 0};
     djf_3d::Color black = {0, 0, 0, 0};
+
     anrchy::Universe universe(
         canvas,
         10000,
         10000,
-        star_color
+        star_color,
+        "assets/asteroid.obj",
+        20,
+        asteroid_color
     );
 
+    anrchy::Player player(universe.get_center());
+
+    djf_3d::KeyboardState keyboard_state;
+
     while (!canvas.exit()) {
+        keyboard_state = canvas.get_keyboard_state();
         canvas.set_draw_color(black);
         canvas.fill_window();
         universe.render_self(canvas, persp);
-        universe.rotate<djf_3d::Axis::Z>(0.02);
+
+        // draw the crosshairs
+        canvas.set_draw_color(green);
+        canvas.draw_line(390, 290, 410, 310);
+        canvas.draw_line(390, 310, 410, 290);
+
+        if (keyboard_state.W)
+            player.steer<djf_3d::Axis::X>(+0.001);
+        if (keyboard_state.S)
+            player.steer<djf_3d::Axis::X>(-0.001);
+        if (keyboard_state.A)
+            player.steer<djf_3d::Axis::Z>(+0.001);
+        if (keyboard_state.D)
+            player.steer<djf_3d::Axis::Z>(-0.001);
+        if (keyboard_state.Q)
+            player.steer<djf_3d::Axis::Y>(+0.001);
+        if (keyboard_state.E)
+            player.steer<djf_3d::Axis::Y>(-0.001);
+        if (keyboard_state.up_arr)
+            player.fire_thrusters(-0.01);
+        if (keyboard_state.down_arr)
+            player.fire_thrusters(+0.01);
+
         canvas.refresh();
+        player.update_state(universe, canvas);
     }
 
     return 0;
