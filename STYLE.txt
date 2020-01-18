@@ -1,0 +1,45 @@
+Rules of programming style for space-anarchy:
+
+* Opening braces on the same line
+
+* Use exceptions very sparingly, i.e. only for truly
+  exceptional circumstances
+
+* Document functions and methods in the headerfiles using
+  Javadoc-style documentation comments
+
+* Try to stay within 60 characters wide
+
+* Use header guards in headerfiles
+
+* No function-like macros or #defined constants; use
+  constexpr instead
+
+* Chain if-else statements like so:
+
+    if (cond0) {
+        do_stuff();
+    } else if (cond1) {
+        do_other_stuff();
+    } else {
+        do_something_else();
+    }
+
+* If a function's parameters & qualifiers make it wider than
+  sixty characters, then put them on separate, indented
+  lines, like so:
+
+    int func_with_many_params(
+        int foo,
+        int bar,
+        const char *baz,
+        const SomeClass& some_object,
+        int yee
+    ) const noexcept;
+
+* Absolutely no mutable raw pointers, use smart pointers or
+  references instead. Const pointers, however, are fine.
+  This rule is overridden if you need to break it in order
+  to interact with C.
+
+* CamelCase for class names, snake_case everywhere else
