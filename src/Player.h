@@ -16,6 +16,7 @@ private:
 
 public:
     int score;
+    float fuel;
     bool is_dead;
 
     Player(

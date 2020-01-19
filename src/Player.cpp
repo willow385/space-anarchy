@@ -13,6 +13,7 @@ noexcept: position(
 ) {
     score = 0;
     is_dead = false;
+    fuel = 100.0;
 
     for (int i = 0; i < 3; i++) {
         angular_momentum[i] = 0.0;
@@ -28,7 +29,9 @@ const djf_3d::Vec3f& Player::get_pos(void) const noexcept {
 
 template <djf_3d::Axis axis>
 void Player::steer(float magnitude) noexcept {
+    if (fuel <= 0) { fuel = 0; return; }
     angular_momentum[static_cast<int>(axis)] += magnitude;
+    fuel -= 0.025;
 }
 
 template void Player::steer<djf_3d::Axis::X>(
@@ -42,7 +45,9 @@ template void Player::steer<djf_3d::Axis::Z>(
 ) noexcept;
 
 void Player::fire_thrusters(float magnitude) noexcept {
+    if (fuel <= 0) { fuel = 0; return; }
     linear_momentum += magnitude;
+    fuel -= 0.025;
 }
 
 void Player::fire_lasers(
@@ -71,6 +76,8 @@ void Player::fire_lasers(
         if (x > 380 && x < 420 && y > 280 && y < 320) {
             uni.destroy_asteroid(i);
             score++;
+            fuel += 2;
+            if (fuel > 100) fuel = 100.0;
         }
     }
 }
@@ -119,11 +126,11 @@ void Player::update_state(
         int y_lower_lim = y_upper_lim - 20;
 
         if (
-            x > 350 && x < 450
+            x > 300 && x < 500
         &&
             y < y_upper_lim && y > y_lower_lim
         &&
-            z > 250 && z < 350
+            z > 200 && z < 400
 
         ) {
             is_dead = true;

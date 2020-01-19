@@ -111,6 +111,19 @@ int main(void) {
             ).c_str()
         );
 
+        std::sprintf(
+            speed_buffer,
+            "FUEL: %f%%",
+            player.fuel
+        );
+
+        text_rend.render_string(
+            canvas,
+            10,
+            40,
+            speed_buffer
+        );
+
         if (keyboard_state.W)
             player.steer<djf_3d::Axis::X>(+0.001);
         if (keyboard_state.S)
