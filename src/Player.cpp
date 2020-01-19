@@ -45,6 +45,10 @@ void Player::fire_lasers(void) const noexcept {
     // TODO: implement
 }
 
+float Player::get_linear_momentum(void) const noexcept {
+    return linear_momentum;
+}
+
 void Player::update_state(
     Universe& uni,
     const djf_3d::Canvas& canvas

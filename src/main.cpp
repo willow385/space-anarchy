@@ -17,6 +17,7 @@
 
 #include <djf-3d-2/djf-3d.h>
 #include <string>
+#include <cstdio>
 #include "Universe.h"
 #include "Player.h"
 
@@ -34,6 +35,7 @@ int main(void) {
     djf_3d::Color asteroid_color = {255, 50, 0, 0};
     djf_3d::Color green = {0, 255, 50, 0};
     djf_3d::Color black = {0, 0, 0, 0};
+    djf_3d::Color planet_color = {200, 250, 0, 0};
 
     anrchy::Universe universe(
         canvas,
@@ -42,12 +44,18 @@ int main(void) {
         star_color,
         "assets/asteroid.obj",
         20,
-        asteroid_color
+        asteroid_color,
+        "assets/planet0.obj",
+        planet_color
     );
 
     anrchy::Player player(universe.get_center());
 
     djf_3d::KeyboardState keyboard_state;
+
+    djf_3d::TextRenderer text_rend;
+
+    std::string speed_str("PRESENT VELOCITY: ");
 
     while (!canvas.exit()) {
         keyboard_state = canvas.get_keyboard_state();
@@ -59,6 +67,31 @@ int main(void) {
         canvas.set_draw_color(green);
         canvas.draw_line(390, 290, 410, 310);
         canvas.draw_line(390, 310, 410, 290);
+
+        // write some instructions and fun facts
+        text_rend.render_string(
+            canvas,
+            10,
+            10,
+            "CONTROLS: WASDQE TO STEER, UP/DOWN ARROW KEYS TO ACCELERATE/DECELERATE"
+        );
+        char speed_buffer[128];
+        std::sprintf(
+            speed_buffer,
+            "%f",
+            player.get_linear_momentum() * -250
+        );
+
+        text_rend.render_string(
+            canvas,
+            10,
+            20,
+            (
+                speed_str
+              + speed_buffer
+              + " KM/H"
+            ).c_str()
+        );
 
         if (keyboard_state.W)
             player.steer<djf_3d::Axis::X>(+0.001);

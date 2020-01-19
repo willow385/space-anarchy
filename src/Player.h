@@ -47,6 +47,8 @@ public:
 
     void fire_lasers(void) const noexcept;
 
+    float get_linear_momentum(void) const noexcept;
+
     /**
      * This method should be called with each turn of the
      * main game loop.

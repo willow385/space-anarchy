@@ -14,12 +14,14 @@ Universe::Universe(
     const djf_3d::Color& init_star_color,
     const std::string& asteroid_path,
     const int number_of_asteroids,
-    const djf_3d::Color& init_asteroid_color
+    const djf_3d::Color& init_asteroid_color,
+    const std::string& planet_path,
+    const djf_3d::Color& init_planet_color
 ): center(
     canvas.get_width() / 2,
     canvas.get_height() / 2,
     canvas.get_viewer_y_pos() / 2
-) {
+), planet(planet_path) {
     universe_radius = radius;
     star_color.red = init_star_color.red;
     star_color.green = init_star_color.green;
@@ -29,6 +31,10 @@ Universe::Universe(
     asteroid_color.green = init_asteroid_color.green;
     asteroid_color.blue = init_asteroid_color.blue;
     asteroid_color.alpha = init_asteroid_color.alpha;
+    planet_color.red = init_planet_color.red;
+    planet_color.green = init_planet_color.green;
+    planet_color.blue = init_planet_color.blue;
+    planet_color.alpha = init_planet_color.alpha;
 
     std::random_device rand_dev;
     std::mt19937 rand_gen(rand_dev());
@@ -37,6 +43,28 @@ Universe::Universe(
         static_cast<float>(-1 * universe_radius) / 30,
         static_cast<float>(universe_radius) / 30
     );
+    std::uniform_real_distribution<> rand_planet_pos(
+        static_cast<float>(universe_radius * 50),
+        static_cast<float>(universe_radius * 100)
+    );
+
+    planet.set_position(
+        djf_3d::Vec3f(
+            rand_planet_pos(rand_gen),
+            rand_planet_pos(rand_gen),
+            rand_planet_pos(rand_gen)
+        )
+    );
+    planet.rotate_self<djf_3d::Axis::X>(
+        rand_angle(rand_gen)
+    );
+    planet.rotate_self<djf_3d::Axis::Y>(
+        rand_angle(rand_gen)
+    );
+    planet.rotate_self<djf_3d::Axis::Z>(
+        rand_angle(rand_gen)
+    );
+
     for (long i = 0; i < number_of_stars; i++) {
         std::unique_ptr<djf_3d::Vec3f> star(
             new djf_3d::Vec3f(
@@ -89,6 +117,9 @@ void Universe::render_self(
             persp
         );
     }
+
+    canvas.set_draw_color(planet_color);
+    canvas.draw_model3d(planet, persp);
 }
 
 long Universe::get_star_count(void) const noexcept {
@@ -131,6 +162,7 @@ void Universe::translate(const float distance) noexcept {
     for (auto& asteroid: asteroids) {
         asteroid->translate<axis>(distance);
     }
+    planet.translate<axis>(distance);
 }
 
 template void Universe::translate<djf_3d::Axis::X>(
@@ -155,7 +187,7 @@ void Universe::rotate(
 
     djf_3d::Vec3f player_pos(
         canvas.get_width() / 2,
-        canvas.get_viewer_y_pos() / 2,
+        canvas.get_viewer_y_pos(),
         canvas.get_height() / 2
     );
 
@@ -164,6 +196,8 @@ void Universe::rotate(
             player_pos, theta_degrees
         );
     }
+
+    planet.rotate_around<axis>(player_pos, theta_degrees);
 }
 
 template void Universe::rotate<djf_3d::Axis::X>(

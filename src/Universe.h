@@ -20,6 +20,8 @@ private:
     djf_3d::Vec3f center;
     djf_3d::Color star_color;
     djf_3d::Color asteroid_color;
+    djf_3d::Color planet_color;
+    djf_3d::Model3d planet;
 
 public:
     Universe(
@@ -29,7 +31,9 @@ public:
         const djf_3d::Color& init_star_color,
         const std::string& asteroid_path,
         const int number_of_asteroids,
-        const djf_3d::Color& init_asteroid_color
+        const djf_3d::Color& init_asteroid_color,
+        const std::string& planet_path,
+        const djf_3d::Color& init_planet_color
     );
 
     ~Universe(void) noexcept;
