@@ -1,4 +1,5 @@
 #include <djf-3d-2/djf-3d.h>
+#include <cmath>
 #include "Universe.h"
 #include "Player.h"
 
@@ -11,6 +12,7 @@ noexcept: position(
     starting_pos.get_pos<djf_3d::Axis::Z>()
 ) {
     score = 0;
+    is_dead = false;
 
     for (int i = 0; i < 3; i++) {
         angular_momentum[i] = 0.0;
@@ -79,6 +81,7 @@ float Player::get_linear_momentum(void) const noexcept {
 
 void Player::update_state(
     Universe& uni,
+    const djf_3d::Perspective& persp,
     const djf_3d::Canvas& canvas
 ) noexcept {
     uni.rotate<djf_3d::Axis::X>(
@@ -100,6 +103,31 @@ void Player::update_state(
 
     for (int i = 0; i < 3; i++) {
         angle[i] += angular_momentum[i];
+    }
+
+    int asteroid_cnt = uni.get_asteroid_cnt();
+    for (int i = 0; i < asteroid_cnt; i++) {
+        float x, y, z;
+        x = uni[i].nth_vertex(0)
+            .project_2d_x(persp);
+        y = uni[i].nth_vertex(0)
+            .get_pos<djf_3d::Axis::Y>();
+        z = uni[i].nth_vertex(0)
+            .project_2d_y(persp);
+
+        int y_upper_lim = canvas.get_viewer_y_pos() + 10;
+        int y_lower_lim = y_upper_lim - 20;
+
+        if (
+            x > 350 && x < 450
+        &&
+            y < y_upper_lim && y > y_lower_lim
+        &&
+            z > 250 && z < 350
+
+        ) {
+            is_dead = true;
+        }
     }
 }
 

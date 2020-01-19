@@ -17,6 +17,7 @@
 
 #include <djf-3d-2/djf-3d.h>
 #include <string>
+#include <iostream>
 #include <cstdio>
 #include "Universe.h"
 #include "Player.h"
@@ -130,7 +131,17 @@ int main(void) {
             player.fire_thrusters(+0.01);
 
         canvas.refresh();
-        player.update_state(universe, canvas);
+        player.update_state(universe, persp, canvas);
+
+        if (player.is_dead) {
+            std::cout
+                << "------------------------------------\n"
+                << "You have died with a score of "
+                << player.score
+                << ".\n"
+                << "------------------------------------\n";
+            break;
+        }
     }
 
     return 0;

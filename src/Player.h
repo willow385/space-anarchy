@@ -16,6 +16,7 @@ private:
 
 public:
     int score;
+    bool is_dead;
 
     Player(
         const djf_3d::Vec3f& starting_pos
@@ -64,6 +65,7 @@ public:
      */
     void update_state(
         Universe& uni,
+        const djf_3d::Perspective& persp,
         const djf_3d::Canvas& canvas
     ) noexcept;
 };
