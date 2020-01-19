@@ -56,6 +56,7 @@ int main(void) {
     djf_3d::TextRenderer text_rend;
 
     std::string speed_str("PRESENT VELOCITY: ");
+    std::string score("ASTEROIDS DESTROYED: ");
 
     while (!canvas.exit()) {
         keyboard_state = canvas.get_keyboard_state();
@@ -73,7 +74,7 @@ int main(void) {
             canvas,
             10,
             10,
-            "CONTROLS: WASDQE TO STEER, UP/DOWN ARROW KEYS TO ACCELERATE/DECELERATE"
+            "CONTROLS: WASDQE TO STEER, UP/DOWN ARROW KEYS TO ACCELERATE/DECELERATE, SPACE TO SHOOT"
         );
         char speed_buffer[128];
         std::sprintf(
@@ -93,6 +94,22 @@ int main(void) {
             ).c_str()
         );
 
+        std::sprintf(
+            speed_buffer,
+            "%d",
+            player.score
+        );
+
+        text_rend.render_string(
+            canvas,
+            10,
+            30,
+            (
+                score
+              + speed_buffer
+            ).c_str()
+        );
+
         if (keyboard_state.W)
             player.steer<djf_3d::Axis::X>(+0.001);
         if (keyboard_state.S)
@@ -105,6 +122,8 @@ int main(void) {
             player.steer<djf_3d::Axis::Y>(+0.001);
         if (keyboard_state.E)
             player.steer<djf_3d::Axis::Y>(-0.001);
+        if (keyboard_state.space)
+            player.fire_lasers(canvas, persp, universe);
         if (keyboard_state.up_arr)
             player.fire_thrusters(-0.01);
         if (keyboard_state.down_arr)

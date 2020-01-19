@@ -75,6 +75,17 @@ public:
         const float theta_degrees,
         const djf_3d::Canvas& canvas
     ) noexcept;
+
+    int get_asteroid_cnt(void) const noexcept;
+
+    /* Returns a reference to the indexth asteroid in
+       the Universe. Going out of bounds with this one
+       is undefined behaviour, but that's okay because
+       this code is neither meant to be reused nor meant
+       to be relied upon. */
+    djf_3d::Model3d& operator[](int index) noexcept;
+
+    void destroy_asteroid(int index) noexcept;
 };
 
 } // end of namespace anrchy

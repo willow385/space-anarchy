@@ -215,4 +215,34 @@ template void Universe::rotate<djf_3d::Axis::Z>(
     const djf_3d::Canvas& canvas
 ) noexcept;
 
+int Universe::get_asteroid_cnt(void) const noexcept {
+    return asteroids.size();
+}
+
+djf_3d::Model3d& Universe::operator[](int index) noexcept {
+    return *asteroids[index];
+}
+
+void Universe::destroy_asteroid(int index) noexcept {
+    std::random_device rand_dev;
+    std::mt19937 rand_gen(rand_dev());
+
+    std::uniform_real_distribution<> rand_y_pos(
+        static_cast<float>(-0.1 * universe_radius),
+        0.0
+    );
+    std::uniform_real_distribution<> rand_x_z_pos(
+        static_cast<float>(-0.1 * universe_radius),
+        static_cast<float>(0.1 * universe_radius)
+    );
+
+    asteroids[index]->set_position(
+        djf_3d::Vec3f(
+            rand_x_z_pos(rand_gen),
+            rand_y_pos(rand_gen),
+            rand_x_z_pos(rand_gen)
+        )
+    );
+}
+
 } // end of namespace anrchy

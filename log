@@ -1,0 +1,327 @@
+./bin/space_anarchy.x86
+Calling ctor djf_3d::Canvas::Canvas()... success.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/planet0.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+Calling ctor djf_3d::Model3d::Model3d().
+djf_3d::Model3d::Model3d(): Attempting to open "assets/asteroid.obj"... success.
+ctor djf_3d::Model3d::Model3d() succeeded.
+The program thought there was one at(51.6466, -310.752).
+The program thought there was one at(-332.941, -471.05).
+The program thought there was one at(-515.835, 89.0029).
+The program thought there was one at(-66.4012, -475.694).
+The program thought there was one at(-533.833, 183.399).
+The program thought there was one at(16.0093, -293.26).
+The program thought there was one at(266.586, -363.132).
+The program thought there was one at(-136.968, -782.172).
+The program thought there was one at(-510.471, -692.545).
+The program thought there was one at(226.006, -334.989).
+The program thought there was one at(305.896, -18.4927).
+The program thought there was one at(71.6533, 185.343).
+The program thought there was one at(-442.524, -428.031).
+The program thought there was one at(-249.982, -286.739).
+The program thought there was one at(-65.2742, -115.279).
+The program thought there was one at(-969.869, -340.793).
+The program thought there was one at(-58.2577, -248.602).
+The program thought there was one at(-379.667, -349.021).
+The program thought there was one at(265.718, -283.89).
+The program thought there was one at(-142.441, -181.933).
+The program thought there was one at(51.1532, -311.617).
+The program thought there was one at(-334.953, -473.167).
+The program thought there was one at(-517.716, 88.5696).
+The program thought there was one at(-67.7604, -477.954).
+The program thought there was one at(-535.544, 183.186).
+The program thought there was one at(15.3753, -294.24).
+The program thought there was one at(266.392, -364.097).
+The program thought there was one at(-138.206, -784.669).
+The program thought there was one at(-512.677, -694.95).
+The program thought there was one at(225.68, -336.179).
+The program thought there was one at(305.747, -18.9966).
+The program thought there was one at(70.8567, 185.065).
+The program thought there was one at(-444.293, -429.56).
+The program thought there was one at(-251.108, -287.756).
+The program thought there was one at(-65.9066, -115.844).
+The program thought there was one at(-974.091, -342.769).
+The program thought there was one at(-58.8817, -249.349).
+The program thought there was one at(-381.553, -350.591).
+The program thought there was one at(265.452, -285.048).
+The program thought there was one at(-143.732, -183.08).
+The program thought there was one at(50.6584, -312.484).
+The program thought there was one at(-336.977, -475.296).
+The program thought there was one at(-519.604, 88.1346).
+The program thought there was one at(-69.1274, -480.228).
+The program thought there was one at(-537.26, 182.972).
+The program thought there was one at(14.7392, -295.223).
+The program thought there was one at(266.197, -365.065).
+The program thought there was one at(-139.451, -787.178).
+The program thought there was one at(-514.894, -697.367).
+The program thought there was one at(225.353, -337.373).
+The program thought there was one at(305.597, -19.5021).
+The program thought there was one at(70.0562, 184.786).
+The program thought there was one at(-446.07, -431.095).
+The program thought there was one at(-252.238, -288.776).
+The program thought there was one at(-66.5408, -116.41).
+The program thought there was one at(-978.341, -344.756).
+The program thought there was one at(-59.5074, -250.098).
+The program thought there was one at(-383.448, -352.168).
+The program thought there was one at(265.185, -286.211).
+The program thought there was one at(-145.03, -184.233).
+The program thought there was one at(50.1622, -313.354).
+The program thought there was one at(-339.011, -477.436).
+The program thought there was one at(-521.5, 87.6978).
+The program thought there was one at(-70.5024, -482.515).
+The program thought there was one at(-538.983, 182.756).
+The program thought there was one at(14.1009, -296.209).
+The program thought there was one at(266.002, -366.035).
+The program thought there was one at(-140.701, -789.698).
+The program thought there was one at(-517.121, -699.796).
+The program thought there was one at(225.025, -338.572).
+The program thought there was one at(305.447, -20.0092).
+The program thought there was one at(69.2518, 184.505).
+The program thought there was one at(-447.854, -432.637).
+The program thought there was one at(-253.372, -289.799).
+The program thought there was one at(-67.1767, -116.977).
+The program thought there was one at(-982.616, -346.756).
+The program thought there was one at(-60.1348, -250.849).
+The program thought there was one at(-385.352, -353.753).
+The program thought there was one at(264.916, -287.379).
+The program thought there was one at(-146.334, -185.392).
+The program thought there was one at(49.6645, -314.227).
+The program thought there was one at(-341.057, -479.589).
+The program thought there was one at(-523.404, 87.2592).
+The program thought there was one at(-71.8855, -484.815).
+The program thought there was one at(-540.712, 182.541).
+The program thought there was one at(13.4606, -297.198).
+The program thought there was one at(265.806, -367.009).
+The program thought there was one at(-141.958, -792.229).
+The program thought there was one at(-519.36, -702.236).
+The program thought there was one at(224.695, -339.775).
+The program thought there was one at(305.297, -20.5179).
+The program thought there was one at(68.4434, 184.222).
+The program thought there was one at(-449.645, -434.185).
+The program thought there was one at(-254.51, -290.826).
+The program thought there was one at(-67.8143, -117.546).
+The program thought there was one at(-986.918, -348.769).
+The program thought there was one at(-60.7639, -251.602).
+The program thought there was one at(-387.265, -355.346).
+The program thought there was one at(264.646, -288.551).
+The program thought there was one at(-147.644, -186.556).
+The program thought there was one at(49.1655, -315.102).
+The program thought there was one at(-343.115, -481.753).
+The program thought there was one at(-525.315, 86.8187).
+The program thought there was one at(-73.2768, -487.129).
+The program thought there was one at(-542.447, 182.324).
+The program thought there was one at(12.8181, -298.191).
+The program thought there was one at(265.61, -367.985).
+The program thought there was one at(-143.22, -794.773).
+The program thought there was one at(-521.61, -704.688).
+The program thought there was one at(224.364, -340.982).
+The program thought there was one at(305.146, -21.0282).
+The program thought there was one at(67.6312, 183.939).
+The program thought there was one at(-451.444, -435.74).
+The program thought there was one at(-255.651, -291.857).
+The program thought there was one at(-68.4537, -118.117).
+The program thought there was one at(-991.247, -350.794).
+The program thought there was one at(-61.3947, -252.357).
+The program thought there was one at(-389.188, -356.947).
+The program thought there was one at(264.376, -289.728).
+The program thought there was one at(-148.961, -187.726).
+The program thought there was one at(48.665, -315.979).
+The program thought there was one at(-345.184, -483.93).
+The program thought there was one at(-527.235, 86.3765).
+The program thought there was one at(-74.6763, -489.457).
+The program thought there was one at(-544.189, 182.106).
+The program thought there was one at(12.1734, -299.187).
+The program thought there was one at(265.413, -368.965).
+The program thought there was one at(-144.488, -797.328).
+The program thought there was one at(-523.87, -707.153).
+The program thought there was one at(224.032, -342.195).
+The program thought there was one at(304.995, -21.5401).
+The program thought there was one at(66.8149, 183.654).
+The program thought there was one at(-453.251, -437.301).
+The program thought there was one at(-256.797, -292.891).
+The program thought there was one at(-69.0948, -118.689).
+The program thought there was one at(-995.603, -352.831).
+The program thought there was one at(-62.0272, -253.114).
+The program thought there was one at(-391.12, -358.555).
+The program thought there was one at(264.104, -290.909).
+The program thought there was one at(-150.284, -188.901).
+The program thought there was one at(48.1631, -316.859).
+The program thought there was one at(-347.264, -486.118).
+The program thought there was one at(-529.163, 85.9324).
+The program thought there was one at(-76.0842, -491.798).
+The program thought there was one at(-545.937, 181.888).
+The program thought there was one at(11.5267, -300.186).
+The program thought there was one at(265.215, -369.947).
+The program thought there was one at(-145.761, -799.895).
+The program thought there was one at(-526.142, -709.629).
+The program thought there was one at(223.699, -343.411).
+The program thought there was one at(304.843, -22.0537).
+The program thought there was one at(65.9946, 183.367).
+The program thought there was one at(-455.066, -438.869).
+The program thought there was one at(-257.947, -293.929).
+The program thought there was one at(-69.7377, -119.263).
+The program thought there was one at(-999.986, -354.882).
+The program thought there was one at(-62.6615, -253.874).
+The program thought there was one at(-393.061, -360.171).
+The program thought there was one at(263.831, -292.096).
+The program thought there was one at(-151.613, -190.082).
+The program thought there was one at(47.6597, -317.742).
+The program thought there was one at(-349.356, -488.319).
+The program thought there was one at(-531.098, 85.4865).
+The program thought there was one at(-77.5003, -494.153).
+The program thought there was one at(-547.692, 181.669).
+The program thought there was one at(10.8777, -301.189).
+The program thought there was one at(265.017, -370.932).
+The program thought there was one at(-147.041, -802.475).
+The program thought there was one at(-528.425, -712.118).
+The program thought there was one at(223.364, -344.633).
+The program thought there was one at(304.691, -22.569).
+The program thought there was one at(65.1702, 183.079).
+The program thought there was one at(-456.888, -440.444).
+The program thought there was one at(-259.101, -294.971).
+The program thought there was one at(-70.3824, -119.838).
+The program thought there was one at(-1004.4, -356.945).
+The program thought there was one at(-63.2975, -254.635).
+The program thought there was one at(-395.013, -361.795).
+The program thought there was one at(263.557, -293.287).
+The program thought there was one at(-152.949, -191.269).
+The program thought there was one at(47.1549, -318.627).
+The program thought there was one at(-351.46, -490.532).
+The program thought there was one at(-533.042, 85.0387).
+The program thought there was one at(-78.9249, -496.523).
+The program thought there was one at(-549.453, 181.449).
+The program thought there was one at(10.2266, -302.195).
+The program thought there was one at(264.818, -371.92).
+The program thought there was one at(-148.327, -805.066).
+The program thought there was one at(-530.719, -714.619).
+The program thought there was one at(223.028, -345.859).
+The program thought there was one at(304.538, -23.0858).
+The program thought there was one at(64.3418, 182.79).
+The program thought there was one at(-458.718, -442.025).
+The program thought there was one at(-260.259, -296.016).
+The program thought there was one at(-71.0288, -120.415).
+The program thought there was one at(-1008.84, -359.021).
+The program thought there was one at(-63.9353, -255.399).
+The program thought there was one at(-396.973, -363.428).
+The program thought there was one at(263.282, -294.483).
+The program thought there was one at(-154.291, -192.461).
+The program thought there was one at(46.6487, -319.514).
+The program thought there was one at(-353.576, -492.758).
+The program thought there was one at(-534.994, 84.589).
+The program thought there was one at(-80.3581, -498.906).
+The program thought there was one at(-551.221, 181.228).
+The program thought there was one at(9.57331, -303.204).
+The program thought there was one at(264.619, -372.91).
+The program thought there was one at(-149.619, -807.67).
+The program thought there was one at(-533.024, -717.132).
+The program thought there was one at(222.691, -347.09).
+The program thought there was one at(304.385, -23.6044).
+The program thought there was one at(63.5092, 182.499).
+The program thought there was one at(-460.556, -443.613).
+The program thought there was one at(-261.421, -297.065).
+The program thought there was one at(-71.677, -120.994).
+The program thought there was one at(-1013.3, -361.111).
+The program thought there was one at(-64.5749, -256.164).
+The program thought there was one at(-398.944, -365.068).
+The program thought there was one at(263.006, -295.684).
+The program thought there was one at(-155.64, -193.659).
+The program thought there was one at(46.141, -320.404).
+The program thought there was one at(-355.703, -494.996).
+The program thought there was one at(-536.954, 84.1374).
+The program thought there was one at(-81.7998, -501.304).
+The program thought there was one at(-552.995, 181.007).
+The program thought there was one at(8.91782, -304.217).
+The program thought there was one at(264.419, -373.904).
+The program thought there was one at(-150.917, -810.286).
+The program thought there was one at(-535.341, -719.658).
+The program thought there was one at(222.352, -348.325).
+The program thought there was one at(304.232, -24.1246).
+The program thought there was one at(62.6726, 182.207).
+The program thought there was one at(-462.402, -445.208).
+The program thought there was one at(-262.587, -298.117).
+The program thought there was one at(-72.327, -121.574).
+The program thought there was one at(-1017.8, -363.214).
+The program thought there was one at(-65.2162, -256.932).
+The program thought there was one at(-400.924, -366.716).
+The program thought there was one at(262.729, -296.89).
+The program thought there was one at(-156.995, -194.863).
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Model3d::~Model3d().
+Calling dtor djf_3d::Canvas::~Canvas()... done.

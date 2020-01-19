@@ -15,6 +15,8 @@ private:
     float angle[3];
 
 public:
+    int score;
+
     Player(
         const djf_3d::Vec3f& starting_pos
     ) noexcept;
@@ -45,7 +47,11 @@ public:
         float magnitude
     ) noexcept;
 
-    void fire_lasers(void) const noexcept;
+    void fire_lasers(
+        djf_3d::Canvas& canvas,
+        const djf_3d::Perspective& persp,
+        Universe& uni
+    ) noexcept;
 
     float get_linear_momentum(void) const noexcept;
 

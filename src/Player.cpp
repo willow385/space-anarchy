@@ -10,6 +10,8 @@ noexcept: position(
     starting_pos.get_pos<djf_3d::Axis::Y>(),
     starting_pos.get_pos<djf_3d::Axis::Z>()
 ) {
+    score = 0;
+
     for (int i = 0; i < 3; i++) {
         angular_momentum[i] = 0.0;
     }
@@ -41,8 +43,34 @@ void Player::fire_thrusters(float magnitude) noexcept {
     linear_momentum += magnitude;
 }
 
-void Player::fire_lasers(void) const noexcept {
-    // TODO: implement
+void Player::fire_lasers(
+    djf_3d::Canvas& canvas,
+    const djf_3d::Perspective& persp,
+    Universe& uni
+) noexcept {
+    djf_3d::Color laser_red = {255, 20, 20, 0};
+    canvas.set_draw_color(laser_red);
+    for (int y = 290; y <= 310; y++) {
+        canvas.draw_line(0, y, 400, 300);
+        canvas.draw_line(800, y, 400, 300);
+    }
+
+    int asteroid_cnt = uni.get_asteroid_cnt();
+    for (int i = 0; i < asteroid_cnt; i++) {
+        float x =
+            uni[i]
+            .nth_vertex(0)
+            .project_2d_x(persp);
+        float y =
+            uni[i]
+            .nth_vertex(0)
+            .project_2d_y(persp);
+
+        if (x > 380 && x < 420 && y > 280 && y < 320) {
+            uni.destroy_asteroid(i);
+            score++;
+        }
+    }
 }
 
 float Player::get_linear_momentum(void) const noexcept {
