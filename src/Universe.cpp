@@ -97,6 +97,8 @@ Universe::Universe(
     }
 }
 
+/* No need to do any work here -- smart pointers will handle all
+   the heap-allocated memory for us */
 Universe::~Universe(void) noexcept {}
 
 void Universe::render_self(
