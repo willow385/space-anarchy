@@ -91,6 +91,8 @@ void Player::update_state(
     const djf_3d::Perspective& persp,
     const djf_3d::Canvas& canvas
 ) noexcept {
+    if (fuel <= 0) {is_dead = true; return; }
+
     uni.rotate<djf_3d::Axis::X>(
         angular_momentum[static_cast<int>(djf_3d::Axis::X)],
         canvas
@@ -112,6 +114,8 @@ void Player::update_state(
         angle[i] += angular_momentum[i];
     }
 
+    /* Scan all the asteroids in the universe to see if
+       we're colliding with any of them */
     int asteroid_cnt = uni.get_asteroid_cnt();
     for (int i = 0; i < asteroid_cnt; i++) {
         float x, y, z;
@@ -125,6 +129,7 @@ void Player::update_state(
         int y_upper_lim = canvas.get_viewer_y_pos() + 10;
         int y_lower_lim = y_upper_lim - 20;
 
+        // Die if we're colliding with an asteroid
         if (
             x > 300 && x < 500
         &&

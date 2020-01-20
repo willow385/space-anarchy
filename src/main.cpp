@@ -24,6 +24,14 @@
 
 int main(void) {
     std::string title("Space Anarchy - by Dante Falzone");
+    int game_score;
+
+    /* Since C++ doesn't have lifetimes the way Rust does,
+       I'm going to simply denote the lifetime of the
+       resources I need by creating all of them inside of
+       a block. */
+    {
+
     djf_3d::Canvas canvas(
         title,
         800,
@@ -147,15 +155,21 @@ int main(void) {
         player.update_state(universe, persp, canvas);
 
         if (player.is_dead) {
-            std::cout
-                << "------------------------------------\n"
-                << "You have died with a score of "
-                << player.score
-                << ".\n"
-                << "------------------------------------\n";
+            game_score = player.score;
             break;
         }
     }
+
+    } // end of the lifetime of the game's resources
+
+    std::cout
+        << std::endl
+        << "------------------------------------\n"
+        << "You have died with a score of "
+        << game_score
+        << ".\n"
+        << "------------------------------------\n";
+
 
     return 0;
 }
